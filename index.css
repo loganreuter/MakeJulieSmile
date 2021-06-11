@@ -3,8 +3,12 @@
 html, body{
     padding: 0;
     margin: 0;
+    width: 100vw;
+    height: 100vh;
     font-family: 'Nunito', sans-serif;
     background-color: #eee3e7;
+    display: flex;
+    flex-flow: column;
 }
 
 @keyframes FadeIn1 {
@@ -23,8 +27,8 @@ html, body{
 }
 
 #content{
-    width: 100vw;
-    height: 100vh;
+    flex: 1 1 0;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,4 +44,83 @@ html, body{
 
 #content.faded{
     animation: FadeIn1 2s;
+}
+
+nav{
+    width: 100%;
+    height: fit-content;
+    font-size: 18px;
+}
+
+nav > ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-flow: row;
+    margin: 0;
+    padding: 0;  
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+nav > ul > li {
+    color: #ffffff;
+    text-shadow: 1px 1px #000000;
+    margin: 20px;
+    list-style: none;
+    float: right;
+}
+
+nav > ul > li > h1{
+    margin: 0;
+}
+
+nav > ul > li:nth-child(1){
+    margin-right: auto;
+}
+
+nav > ul > li > a:hover{
+    cursor: pointer;
+    color: #fe9c8f;
+    text-shadow: none;
+}
+
+#jokes{
+    max-width: 600px;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+#answer{
+    font-size: medium;
+    cursor: pointer;
+}
+
+#answer.hidden:hover{
+    background-color: #fe9c8f;
+    color: #eee3e7;
+}
+
+#answer.hidden{
+    padding: 10px;
+    border: 1px solid #fe9c8f;
+}
+
+#btn{
+    margin-top: 20px;
+    background-color: inherit;
+    border: 1px solid #fe9c8f;
+    color: #fe9c8f;
+    font-size: medium;
+    padding: 10px;
+}
+
+#btn:hover{
+    cursor: pointer;
+    background-color: #fe9c8f;
+    color: #eee3e7;
 }

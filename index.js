@@ -15,17 +15,29 @@ document.addEventListener("DOMContentLoaded", () => {
         "You are an excellent friend"
     ]
 
+    let loggedIn = sessionStorage.getItem('isJulie');
+    let play = false;
+    console.log(loggedIn)
+    if(loggedIn){
+        play = true
+    } else {
+        if(confirm("Are You Julie")){
+            console.log("Hello Julie")
+            sessionStorage.setItem('isJulie', true)
+            play = true;
+        } else {
+            document.getElementById("content").innerText = "Fuck off then"
+        }
+    }
+    
+    
 
-
-    if(confirm("Are You Julie")){
-        console.log("Hello Julie")
+    if(play){
         document.getElementById("content").innerText = "Hello Julie"
         setInterval(() => {
             document.getElementById("content").classList.toggle("active")
             document.getElementById("content").classList.toggle("faded")
             document.getElementById("content").innerText = Quotes[Math.floor(Math.random() * Quotes.length)]
         }, 10000)
-    } else {
-        document.getElementById("content").innerText = "Fuck off then"
     }
 })
